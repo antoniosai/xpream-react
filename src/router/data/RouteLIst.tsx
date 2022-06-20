@@ -23,9 +23,9 @@ import { TemplateWrapper } from '@component/TemplateWrapper';
 
 const RouteList: RoutesObject[] = [
   {
-    path: 'dashboard',
-    label: 'Dashboard',
-    name: 'dashboard',
+    path: '/home',
+    label: 'Home',
+    name: 'home',
     group: null,
     isPrivate: false,
     isExact: true,
@@ -36,7 +36,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'executive-summary-dashboard',
+    path: '/executive-summary-dashboard',
     label: 'Executive Summary Dashboard',
     name: 'executive-summary-dashboard',
     group: null,
@@ -49,7 +49,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'trb',
+    path: '/trb',
     label: 'Task Review Board',
     name: 'trb',
     group: null,
@@ -89,7 +89,7 @@ const RouteList: RoutesObject[] = [
     ],
   },
   {
-    path: 'slot-capacity',
+    path: '/slot-capacity',
     label: 'Slot & Capacity',
     name: 'executive-summary-dashboard',
     group: null,
@@ -116,7 +116,7 @@ const RouteList: RoutesObject[] = [
     ],
   },
   {
-    path: 'production-planning',
+    path: '/production-planning',
     label: 'Production Planning',
     name: 'production-planning',
     group: null,
@@ -129,7 +129,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'production-control-hangar',
+    path: '/production-control-hangar',
     label: 'Prod. Control Hangar',
     name: 'production-control-hangar',
     group: null,
@@ -142,7 +142,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'production-control-shop',
+    path: '/production-control-shop',
     label: 'Prod. Control Shop',
     name: 'production-control-shop',
     group: null,
@@ -155,7 +155,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'people-development',
+    path: '/people-development',
     label: 'People Development',
     name: 'people-development',
     group: null,
@@ -168,7 +168,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'xops',
+    path: '/xops',
     label: 'XOPS',
     name: 'xops',
     group: null,
@@ -181,7 +181,7 @@ const RouteList: RoutesObject[] = [
     groupset: [],
   },
   {
-    path: 'mater-data',
+    path: '/mater-data',
     label: 'Master Data',
     name: 'master-data',
     group: null,
@@ -208,7 +208,7 @@ const RouteList: RoutesObject[] = [
     ],
   },
   {
-    path: 'miscellaneous',
+    path: '/miscellaneous',
     label: 'Miscellaneous',
     name: 'miscellaneous',
     group: null,
