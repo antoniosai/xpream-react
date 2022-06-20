@@ -20,6 +20,7 @@ import { RoutesObject } from './RoutesObject';
 import { HomePage } from '@pages/HomePage';
 import { TaskReview } from '@pages/TaskReview';
 import { TemplateWrapper } from '@component/TemplateWrapper';
+import { XopsPage } from '@pages/XopsPage';
 
 const RouteList: RoutesObject[] = [
   {
@@ -174,7 +175,7 @@ const RouteList: RoutesObject[] = [
     group: null,
     isPrivate: false,
     isExact: true,
-    element: <HomePage />,
+    element: <XopsPage />,
     component: HomePage,
     isDashboardShow: true,
     icon: MobileScreenShare,
