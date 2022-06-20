@@ -1,7 +1,4 @@
-import { MainDashboard } from "@component/layout/auth/MainDashboard";
-import { Button } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
 
 function NotFoundPage() {
 

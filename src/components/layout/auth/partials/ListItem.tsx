@@ -12,7 +12,7 @@ const CollapsibleMenu = (isOpened: boolean, children: RoutesObject) => {
   const navigate = useNavigate();
   
   const handleClick = (path: string) => {
-    const destination = `${children.path}/${path}`;
+    const destination = `/${children.path}/${path}`;
     navigate(destination);
   };
 
@@ -61,7 +61,7 @@ export const ListItem = (props: RoutesObject) => {
     if (props.groupset.length > 0) {
       setOpen(!open);
     } else {
-      navigate(props.path);
+      navigate(`/${props.path}`);
     }
   };
 

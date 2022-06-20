@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import {
   Routes, 
   Route,
-  useRoutes,
 } from "react-router-dom";
 import Cookies from "js-cookie";
 
@@ -17,10 +16,6 @@ import NotFoundPage from "@pages/utils/NotFoundPage";
 import LoginPage from "@pages/LoginPage";
 import LoginData from "@pages/LoginPage/data/LoginData";
 import RouteList from "./data/RouteList";
-import WithLoginPage from "./components/WithLoginPage";
-import { MainDashboard } from "@component/layout/auth/MainDashboard";
-import { HomePage } from "@pages/HomePage";
-import { TaskReview } from "@pages/TaskReview";
 import { TemplateWrapper } from "@component/TemplateWrapper";
 
 export const routes: RoutesObject[] = RouteList;
@@ -39,29 +34,10 @@ export default function RouteApp() {
       dispatch(loginActions.setLoginState(false));
     }
   });
-
-//   let element = useRoutes([
-//     {
-//         element: <TemplateWrapper />,
-//         children: [
-//            { path: "/login", element: <LoginPage /> },
-//            { path: "signup", element: <NotFoundPage /> },
-//         ],
-//     },
-//     {
-//         element: <TemplateWrapper />,
-//         children: [
-//             { path: "/", element: <HomePage /> },
-//             { path: "/trb/task-review", element: <TaskReview /> },
-//         ],
-//     },
-// ]);
-// return element;
   
   return (
     <Routes>
       {/* Dynamic Routes */}
-
       {routes.map((route, index) => {
         if(route.groupset.length > 0) {
           return (
@@ -75,11 +51,6 @@ export default function RouteApp() {
           return (<Route key={index} path={route.path} element={route.element} />)
         } 
       })}
-
-      {/* <Route index element={<HomePage/>}></Route>
-      <Route path="trb" element={<TemplateWrapper />}>
-        <Route path="task-review" element={<TaskReview/>}></Route>
-      </Route> */}
       {/* Dynamic Routes */}
 
       {/* Static Routes */}
