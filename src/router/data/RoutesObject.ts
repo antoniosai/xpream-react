@@ -5,7 +5,6 @@ export interface RoutesObject {
   group?: null | string;
   isPrivate?: boolean;
   isExact?: boolean;
-  isDrawerMenu: boolean;
   isDashboardShow: boolean;
   component: React.ComponentType;
   element: JSX.Element;

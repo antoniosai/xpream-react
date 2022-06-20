@@ -13,7 +13,6 @@ export const MenuItem = () => {
           label={row.label}
           component={row.component}
           element={row.element}
-          isDrawerMenu={row.isDrawerMenu}
           isDashboardShow={row.isDashboardShow}
           icon={row.icon} 
           groupset={row.groupset}

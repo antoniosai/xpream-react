@@ -8,6 +8,14 @@ import { Collapse, List } from '@mui/material';
 import { RoutesObject } from '@router/data/RoutesObject';
 
 const CollapsibleMenu = (isOpened: boolean, children: RoutesObject) => {
+
+  const navigate = useNavigate();
+  
+  const handleClick = (path: string) => {
+    const destination = `${children.path}/${path}`;
+    navigate(destination);
+  };
+
   if (children.groupset.length > 0) {
     // <List component="div" disablePadding>
     //       <ListItemButton sx={{ pl: 4 }}>
@@ -21,9 +29,8 @@ const CollapsibleMenu = (isOpened: boolean, children: RoutesObject) => {
       <Collapse in={isOpened} timeout="auto" unmountOnExit>
         {children.groupset.map((el, index) => (
           <List component="div" disablePadding key={index}>
-            <ListItemButton>
+            <ListItemButton onClick={() => handleClick(el.path)}>
               <ListItemIcon>
-                <el.icon />
               </ListItemIcon>
               <ListItemText primary={el.label} />
             </ListItemButton>
@@ -31,8 +38,6 @@ const CollapsibleMenu = (isOpened: boolean, children: RoutesObject) => {
         ))}
       </Collapse>
     );
-  } else {
-    return <React.Fragment></React.Fragment>;
   }
 };
 

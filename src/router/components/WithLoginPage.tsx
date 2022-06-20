@@ -1,37 +1,21 @@
+import { TemplateWrapper } from '@component/TemplateWrapper';
 import LoginPage from '@pages/LoginPage';
-import { routes } from '@router/main';
-import React from 'react';
+import { RoutesObject } from '@router/data/RoutesObject';
 
-
-export const WithLoginPage =
-  (loginState: boolean) => (WrappedPage: React.ComponentType) => {
-
-    return class withLogin extends React.Component {
-      componentDidMount() {
+const WithLoginPage = (route: RoutesObject) => {
+  
+  if(route.isPrivate) {
+    if (true) {
+      if(route.groupset.length > 0) {
+        return <TemplateWrapper/>
       }
 
-      render() {
-        return loginState ? <WrappedPage /> : <LoginPage />;
-      }
-    };
-  };
+      return route.element;
+    } else {
+      return <LoginPage />;
+    }
+  }
+  return route.element
+};
 
-export function GetRouteForDrawerMenu() {
-  return routes.filter(route => route.isDrawerMenu === true);
-}
-
-// const getElement = (loginState: boolean) => (route: RoutesObject) => {
-//   loginState
-//     ? console.log('Login state is true')
-//     : console.log('loginState is false');
-
-//   if (route.isPrivate) {
-//     if (loginState) {
-//       return route.element;
-//     } else {
-//       return <LoginPage />;
-//     }
-//   } else {
-//     return route.element;
-//   }
-// };
+export default WithLoginPage;
