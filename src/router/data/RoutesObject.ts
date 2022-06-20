@@ -1,13 +1,14 @@
 export interface RoutesObject {
-  index?: boolean;
   path: string;
   name: string;
+  label: string;
   group?: null | string;
-  element: React.ReactNode;
   isPrivate?: boolean;
   isExact?: boolean;
   isDrawerMenu: boolean;
-  component?: React.ComponentType;
-  icon?: React.ComponentType;
-  groupset?: RoutesObject[];
+  isDashboardShow: boolean;
+  component: React.ComponentType;
+  element: JSX.Element;
+  icon: React.ComponentType;
+  groupset: RoutesObject[];
 }

@@ -1,31 +1,43 @@
 
-import NotFoundPage from "@pages/utils/NotFoundPage";
-import HomePage from "@pages/HomePage";
-import LoginPage from "@pages/LoginPage";
+import {
+  Home,
+  ChatBubble,
+} from '@mui/icons-material';
 
-const RouteList = [
+import NotFoundPage from "@pages/utils/NotFoundPage";
+// import HomePage from "@pages/HomePage";
+import LoginPage from "@pages/LoginPage";
+import { RoutesObject } from './RoutesObject';
+import { HomePage } from '@pages/HomePage';
+
+const RouteList: RoutesObject[] = [
   { 
-    index: true, 
-    path: "/",
-    name: 'home',
-    element: <HomePage/>,
+    path: '/',
+    label: 'Dashboard',
+    name: 'dashboard',
+    element: <HomePage />,
+    group: null,
+    isPrivate: false,
+    isExact: true,
     isDrawerMenu: false,
-    isPrivate: true,
+    component: NotFoundPage,
+    isDashboardShow: true,
+    icon: Home,
+    groupset: [],
   },
   {
-    index: false,
-    path: "/login",
+    path: '/login',
+    label: 'Login Page',
     name: 'login',
-    element: <LoginPage/>,
+    element: <LoginPage />,
+    group: null,
+    isPrivate: false,
+    isExact: true,
     isDrawerMenu: false,
-    isPrivate: false
-  },
-  { 
-    path: "*",
-    name: 'not-found',
-    element: <NotFoundPage/>,
-    isDrawerMenu: false,
-    isPrivate: false
+    component: LoginPage,
+    isDashboardShow: false,
+    icon: ChatBubble,
+    groupset: [],
   },
 ]
 

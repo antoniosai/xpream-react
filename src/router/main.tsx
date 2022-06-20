@@ -15,7 +15,7 @@ import { COOKIE_TOKEN } from "@services/constants";
 import NotFoundPage from "@pages/utils/NotFoundPage";
 import LoginPage from "@pages/LoginPage";
 import LoginData from "@pages/LoginPage/data/LoginData";
-import RouteList from "./data/RouteLIst";
+import RouteList from "./data/RouteList";
 
 export const routes: RoutesObject[] = RouteList;
 
@@ -52,15 +52,12 @@ export default function RouteApp() {
 
 const getElement = (loginState: boolean) => (route: RoutesObject) => {
 
-  loginState ? console.log("Login state is true") : console.log('loginState is false');
-
   if(route.isPrivate) {
     if (loginState) {
       return route.element;
     } else {
       return <LoginPage/>;
     }
-  } else {
-    return route.element
   }
+  return route.element
 };
