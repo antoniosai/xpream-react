@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
 // Custom components
-import { AppDrawer } from '@component/Drawer';
+import { AppDrawer } from '@component/AppDrawer';
 
 const drawerWidth: number = 240;
 interface AppBarProps extends MuiAppBarProps {
@@ -97,7 +97,7 @@ export function MainDashboard(props: DashboardProps) {
           }}
         >
           <Toolbar />
-          <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="xl" sx={{ mt: 2, mb: 1, ml: 0 }}>
             {props.children}
           </Container>
         </Box>

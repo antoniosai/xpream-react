@@ -253,6 +253,23 @@ const basicTheme = createTheme({
         },
       ],
     },
+    MuiCard: {
+      variants: [
+        {
+          props: { variant: "outlined" },
+          style: {
+            textTransform: "none",
+            color: "#000000",
+            background: "#FFFFFF",
+            padding: "16px",
+            fontSize: "16px",
+            lineHeight: "19px",
+            borderRadius: "10px",
+          },
+        },
+        
+      ],
+    },
   },
 });
 

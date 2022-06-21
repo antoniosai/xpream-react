@@ -1,5 +1,7 @@
-import { Box } from '@mui/material';
+import { Box, Card } from '@mui/material';
 import { MainDashboard } from '@component/layout/auth/MainDashboard';
+
+import { AppTab } from '@component/AppTab';
 
 export function HomePage() {
   return (
@@ -10,7 +12,9 @@ export function HomePage() {
           padding: '10px 30px 30px 30px;', // top right bottom  left
         }}
       >
-        ok
+        <Card variant="outlined">
+          <AppTab />
+        </Card>
       </Box>
     </MainDashboard>
   );
