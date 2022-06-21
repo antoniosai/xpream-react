@@ -1,6 +1,5 @@
 import Logo from "@component/Logo";
-import { Grid, Typography } from "@mui/material";
-import React from "react";
+import { Grid } from "@mui/material";
 
 export function WelcomeScreen() {
   return (
