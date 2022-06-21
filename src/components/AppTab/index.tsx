@@ -1,9 +1,14 @@
 import React from "react";
 import { Box, Tab, Tabs } from '@mui/material';
+import { TabObject } from './data/TabObject'
 import { TabPanel } from "../TabPanel";
 import { a11yProps } from "../TabPanel/props";
 
-export function AppTab() {
+interface props {
+  datas: TabObject[]
+}
+
+export function AppTab(props: props) {
 
   const [value, setValue] = React.useState(0);
 
@@ -15,16 +20,16 @@ export function AppTab() {
     <React.Fragment>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Dashboard" {...a11yProps(0)} />
-          <Tab label="One Day Closing Status" {...a11yProps(1)} />
+          {props.datas.map((tab, index) => (
+            <Tab label={tab.title} {...a11yProps(index)} />
+          ))}
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
+      {props.datas.map((tab, index) => (
+        <TabPanel value={value} index={index}>
+          <tab.component />
+        </TabPanel>
+      ))}
     </React.Fragment>
   )
 }

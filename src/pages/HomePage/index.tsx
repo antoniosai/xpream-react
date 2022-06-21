@@ -1,9 +1,19 @@
 import { Box, Card } from '@mui/material';
 import { MainDashboard } from '@component/layout/auth/MainDashboard';
-
 import { AppTab } from '@component/AppTab';
+import React from 'react';
+import { OneDayClosingStatus } from './components/OneDayClosingStatus';
+import { TabObject } from '@component/AppTab/data/TabObject';
 
 export function HomePage() {
+
+  const tabData: TabObject[] = [
+    {
+      title: 'Dashboard',
+      component: OneDayClosingStatus
+    }
+  ];
+
   return (
     <MainDashboard>
       <Box
@@ -13,7 +23,7 @@ export function HomePage() {
         }}
       >
         <Card variant="outlined">
-          <AppTab />
+          <AppTab datas={tabData} />
         </Card>
       </Box>
     </MainDashboard>
