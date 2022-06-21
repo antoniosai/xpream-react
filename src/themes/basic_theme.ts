@@ -258,13 +258,14 @@ const basicTheme = createTheme({
         {
           props: { variant: "outlined" },
           style: {
+            marginLeft: "-30px",
             textTransform: "none",
             color: "#000000",
             background: "#FFFFFF",
             padding: "16px",
             fontSize: "16px",
             lineHeight: "19px",
-            borderRadius: "10px",
+            borderRadius: "6px",
           },
         },
         
